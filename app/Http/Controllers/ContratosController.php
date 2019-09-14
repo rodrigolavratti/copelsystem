@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Type_of_contract;
 use App\Contrato;
 use Illuminate\Http\Request;
 
@@ -31,7 +32,8 @@ class ContratosController extends Controller
      * @author Rodrigo Lavratti
      */
     public function create(){
-        return view('contratos.create');
+        $types_of_contract = Type_of_contract::all();
+        return view('contratos.create', compact('types_of_contract'));
     }
 
     /**

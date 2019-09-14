@@ -25,10 +25,15 @@
                         </div>
                         <div class="form-group">
                             <label for="contract_type">Tipo de Contrato</label>
-                            <input type="text" class="form-control @error('contract_type') is-invalid @enderror" name="contract_type" placeholder="Ex: Obra por encorporação" require>
-                            @error('contract_type')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                                <select class="form-control @error('contract_type') is-invalid @enderror" name="contract_type">
+                                    @foreach($types_of_contract as $type_of_contract)
+                                        <option value="{{ $type_of_contract->name }}">{{ $type_of_contract->name }}
+                                        </option>
+                                    @endforeach
+                                @error('contract_type')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                                </select>
                         </div>
                         <div class="form-group">
                             <label for="quantily">Quantidade</label>

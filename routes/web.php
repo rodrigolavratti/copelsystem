@@ -24,15 +24,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/usuarios', 'UsuariosController@index')->name('usuarios');
 
-/**
-* Routes to Contratos
-*/
+
 Route::resource('/contratos', 'ContratosController');
 Route::resource('/aes', 'AesController');
+Route::resource('/empreiteiras', 'EmpreiteirasController');
+Route::resource('/projetos', 'ProjetosController');
+Route::resource('/pde', 'PdeController');
+Route::resource('/obras', 'ObrasController');
+Route::resource('/relatorios', 'RelatoriosController');
 
-// Route::get('/aes', 'AesController@index')->name('aes');
-// Route::get('/empreiteiras', 'EmpreiteirasController@index')->name('empreiteiras');
-// Route::get('/projetos', 'ProjetosController@index')->name('projetos');
-// Route::get('/pde', 'PdeController@index')->name('pde');
-// Route::get('/obras', 'ObrasController@index')->name('obras');
-// Route::get('/relatorios', 'RelatoriosController@index')->name('relatorios');
